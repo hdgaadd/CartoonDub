@@ -4,13 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Theme {
-    final String themeName;//动画片名称
-    final String teamName;//队伍名称
-    final HashMap<String,String> map;//都有人物map
-    public Theme(String themeName, String teamName, HashMap<String, String> map) {
-        this.map = map;
+    public final String themeName;//动画片名称
+    public final String teamName;//队伍名称
+    public final HashMap<String,String> map;//都有人物map
+    public String roleStr;//角色输入提醒
+    public final String functionStr;//功能输入提醒
+    public Theme(String themeName, String teamName,String functionStr,HashMap<String, String> map) {
         this.teamName = teamName;
         this.themeName = themeName;
+        this.functionStr=functionStr;
+        this.map = map;
+        start();//开始方法
     }
     public String getThemeName(){return themeName;};//都拥有该get
     public String getTeamName(){return teamName;};//都拥有该get
@@ -22,8 +26,8 @@ public abstract class Theme {
         }
         sb.deleteCharAt(sb.length()-1);
         sb.append(",break结束");
-        String str=sb.toString();
-        System.out.println("第一次输入："+str);
-        System.out.println("第一次输入确认角色后,再次输入x为角色笑声,t为变身,而输入第一次输入内容为随机播放");
+        roleStr=sb.toString();
+        System.out.println("第一次输入："+roleStr);
+        System.out.println(functionStr);
     }
 }
