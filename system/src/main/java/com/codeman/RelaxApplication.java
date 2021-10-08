@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.codeman.mapper")
+//超能勇士
 public class RelaxApplication {
 
 	public static void main(String[] args) {
