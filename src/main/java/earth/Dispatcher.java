@@ -1,10 +1,11 @@
 package earth;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Dispatcher {
-    public void dispatcher(HashMap<String, String> map,String str){
+    public void dispatcher(HashMap<String, String> map,String str) throws IOException {
         Scanner sc = new Scanner(System.in);
         String line=sc.nextLine();
         while (!line.equals("break")) {
@@ -19,7 +20,7 @@ public class Dispatcher {
         }
         System.out.println("successful");
     }
-    public void check(String line,String url){
+    public void check(String line,String url) throws IOException {
         Scanner sc = new Scanner(System.in);
         String l=sc.nextLine();
         while (l.equals("t")||l.equals(line)||l.equals("x")){

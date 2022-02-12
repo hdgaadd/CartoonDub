@@ -4,11 +4,20 @@ import javazoom.jl.player.Player;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Random;
 
 public class PlayMusic {
     public Player player = null;
-    String str="E:\\offer\\MyItem\\CartoonDub\\src\\main\\java\\beastMusic\\";
+
+    File directory = new File("");// 参数为空
+    String courseFile = directory.getCanonicalPath();
+
+    String str= courseFile + "\\src\\main\\java\\beastMusic\\";
+
+    public PlayMusic() throws IOException {
+    }
+
     //随机播放
     public void random(String url){
         File file = new File(str+url+"\\");//文件夹
